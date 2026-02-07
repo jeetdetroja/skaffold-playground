@@ -1,0 +1,23 @@
+{
+  // "compilerOptions": {
+  //   "module": "commonjs",
+  //   "esModuleInterop": true,
+  //   "target": "es6",
+  //   "moduleResolution": "node",
+  //   "outDir": "dist",
+  //   "rootDir": "src" // Add this line
+  // },
+      "compilerOptions": {
+        "baseUrl": "./src",
+                "outDir": "dist",
+        "paths": {
+            "@controllers/*": [
+                "controllers/*"
+            ],
+            "@routes/*": [
+                "routes/*"
+            ]
+        },
+    },
+  "lib": ["es2015"]
+}

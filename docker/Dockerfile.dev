@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install dependencies first (cache-friendly)
+COPY app/package.json app/package-lock.json* ./
+RUN npm install
+
+# Copy source (will be overridden by volume mount in compose)
+COPY app/ .
+
+EXPOSE 3000
+
+# Dev mode (tsc --watch + node)
+CMD ["npm", "run", "dev"]

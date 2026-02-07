@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    container_name: fastify-backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - app/.env
+    volumes:
+      - ./app:/app
+    command: npm run dev
+    restart: unless-stopped
